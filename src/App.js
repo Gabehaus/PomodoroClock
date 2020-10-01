@@ -43,7 +43,7 @@ function App() {
     }
   }
 
-  //function called by setInterval - Problem here in that I set seconds to 59???
+  //function called by - Problem here in that I set seconds to 59???
   useEffect(() => {
     if (time === 0 && blockType == "Session") {
       setTime(breakLength * 60 * 1000);
@@ -75,6 +75,18 @@ function App() {
 
   return (
     <div id="wrap-all">
+      <div id="control-box">
+        <TimeSet type={"Break"} value={[breakLength, setBreakLength]} />
+      </div>
+      <div id="control-gap"></div>
+      <div id="control-box2">
+        <TimeSet
+          type={"Session"}
+          value={[sessionLength, setSessionLength]}
+          block={blockType}
+          setter={setTime}
+        />
+      </div>
       <div className="App">
         <div id="black-board-1">
           <div id="title">Pomodoro Clock</div>
@@ -105,22 +117,7 @@ function App() {
             {blockType === "Session" ? "Session" : "Break"}
           </div>
         </div>
-      </div>
-      <div id="control-box-wrapper">
-        {" "}
-        <div id="control-box">
-          <TimeSet type={"Break"} value={[breakLength, setBreakLength]} />
-        </div>
-        <div id="control-gap"></div>
-        <div id="control-box2">
-          <TimeSet
-            type={"Session"}
-            value={[sessionLength, setSessionLength]}
-            block={blockType}
-            setter={setTime}
-          />
-        </div>
-      </div>
+      </div>{" "}
     </div>
   );
 }

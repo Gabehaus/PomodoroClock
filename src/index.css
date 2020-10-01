@@ -282,15 +282,14 @@ code {
   flex-direction: row;
   justify-content: space-between;
 
-  background: transparent;
   height: 400px;
   width: 90%;
   z-index: 2;
 }
 
 #control-box {
-  position: relative;
-
+  position: absolute;
+  top: 0;
   height: 180px;
   width: 180px;
   border-style: solid;
@@ -303,7 +302,9 @@ code {
 }
 
 #control-box2 {
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
   height: 180px;
   width: 180px;
   border-style: solid;
